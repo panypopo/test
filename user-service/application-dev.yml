@@ -46,10 +46,10 @@ eureka:
   client:
     serviceUrl:
       defaultZone: "http://localhost:8761/eureka/"
-    instance:
-      preferIpAddress: true
     healthcheck:
-      enabled: true
+      enabled: true  
+  instance:
+    preferIpAddress: true
 framework:
   cache:
     expire: 86400
