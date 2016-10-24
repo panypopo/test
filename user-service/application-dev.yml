@@ -40,7 +40,7 @@ jms:
 mybatis:
   typeAliasesPackage: "**.*.domain"
   mapperLocations: "classpath:/**/*/mapper/*.xml"
-  basePackage: "com.pudding.mappers"
+  basePackage: "com.pudding.user.mappers"
   enabledCache: true
 eureka:
   client:
