@@ -1,6 +1,6 @@
 
 server:
-  port: 8081
+  port: 8082
 
 spring:
   #REDIS
@@ -39,8 +39,7 @@ jms:
     pub-sub-domain: true
 mybatis:
   typeAliasesPackage: "**.*.domain"
-  mapperLocations: "classpath:/**/*/mapper/*.xml"
-  basePackage: "com.pudding.user.mapper"
+  mapperLocations: "classpath:/**/*/mappers/*.xml"
   enabledCache: true
 eureka:
   client:
@@ -50,6 +49,8 @@ eureka:
       enabled: true  
   instance:
     preferIpAddress: true
+    statusPageUrlPath: "/info"
+    healthCheckUrlPath: "/health"
 framework:
   cache:
     expire: 86400
