@@ -38,6 +38,7 @@ spring:
 jms:
     pub-sub-domain: true
 mybatis:
+  enabled: true
   typeAliasesPackage: "**.*.domain"
   mapperLocations: "classpath:/**/*/mappers/*.xml"
   enabledCache: true
@@ -55,8 +56,22 @@ framework:
   cache:
     expire: 86400
   mq:
+    enabled: true
     queues:
       - "common.queue"
       - "myqueue"
     topics:
       - "common.topic"
+
+swagger:
+  enabled: true
+  api-info:
+    title: "用户管理"
+    description: "用户管理服务"
+    version: "v1"
+    contact:
+      name: "admin"
+      url: "http://localhost:8082"
+      email: "316311403@qq.com"
+
+
