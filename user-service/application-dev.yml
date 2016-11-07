@@ -65,13 +65,11 @@ framework:
 
 swagger:
   enabled: true
-  api-info:
-    title: "用户管理"
-    description: "用户管理服务"
-    version: "v1"
-    contact:
-      name: "admin"
-      url: "http://localhost:8082"
-      email: "316311403@qq.com"
+  title: "用户管理"
+  description: "用户管理服务"
+  version: "v1"
+  contactName: "admin"
+  contactUrl: "http://localhost:8082"
+  contactEmail: "316311403@qq.com"
 
 
