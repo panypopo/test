@@ -1,7 +1,8 @@
-
 server:
   port: 8081
 
+  session:
+    timeout: 86400
 spring:
   #REDIS
   redis:
@@ -23,3 +24,7 @@ eureka:
 api:
   gateway:
     url: "http://localhost:10000/api"
+security:
+  basic:
+    enabled: false
+  enabled: true
