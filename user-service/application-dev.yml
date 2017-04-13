@@ -8,12 +8,12 @@ spring:
     database: 2
     host: 106.14.68.145
     port: 26379
-  activemq:
-    in-memory: true
-    pooled: false
-    broker-url: "tcp://localhost:61616"
-    user: "admin"
-    password: "admin"
+#  activemq:
+#    in-memory: true
+#    pooled: false
+#    broker-url: "tcp://localhost:61616"
+#    user: "admin"
+#    password: "admin"
   datasource:
     name: test
     url: jdbc:mysql://106.14.68.145:3306/ciip_usr?useSSL=false&characterEncoding=utf8
@@ -35,8 +35,8 @@ spring:
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
 
-jms:
-    pub-sub-domain: true
+#jms:
+#    pub-sub-domain: true
 mybatis:
   enabled: true
   typeAliasesPackage: "**.*.domain"
@@ -49,11 +49,16 @@ eureka:
       defaultZone: "http://eureka-server:9002/eureka/"
     healthcheck:
       enabled: true
+    lease:
+      duration: 5
   instance:
     instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
     preferIpAddress: true
     statusPageUrlPath: "/info"
     healthCheckUrlPath: "/health"
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+
 global:
   cache:
     expire: 86400
@@ -63,13 +68,6 @@ global:
     maxActive: 300
     maxIdle: 100
     maxWait: 1000
-  mq:
-    enabled: true
-    queues:
-      - "common.queue"
-      - "myqueue"
-    topics:
-      - "common.topic"
 
 swagger:
   basePackage: "com.esudian.usr"
@@ -86,3 +84,9 @@ security:
 flyway:
   enabled: true
   sql-migration-separator: "@"
+endpoints:
+  health:
+    sensitive: false
+management:
+  security:
+    enabled: false
